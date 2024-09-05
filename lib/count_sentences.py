@@ -34,3 +34,13 @@ class MyString:
       return True
     else:
       return False
+    
+  def count_sentences(self):
+    #replace all question marks and exclamation marks with periods
+    sentences = self.value.replace("?",".").replace("!",".").split(".") #split on periods
+    #return the number of non-empty sentences in the list.
+    return len([sentence for sentence in sentences if sentence.strip()])
+  
+result = MyString()
+result.value = "This is a string! It has three sentences. Right?"
+print(result.count_sentences())
